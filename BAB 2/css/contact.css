@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("../images/laut.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* ===== AREA UTAMA ===== */
+.v12_290 {
+  width: 100%;
+  min-height: 768px; /* sesuai ukuran layar laptop 14 inch */
+  background: rgba(219, 240, 206, 0.68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== HEADER ===== */
+header {
+  width: 100%;
+  background-color: #d8e8c3;
+  text-align: center;
+  padding: 12px 0;
+  border-bottom: 2px solid #a4b693;
+}
+
+header h1 {
+  color: #3d5630;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* ===== KONTEN ===== */
+.content {
+  text-align: center;
+  max-width: 750px;
+  margin-top: 60px;
+  padding: 40px 25px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+/* ===== LOGO ===== */
+.v12_309 {
+  width: 130px; /* pas untuk layar 14 inch */
+  height: 130px;
+  background: url("../images/logoweb.png") no-repeat center center;
+  background-size: contain;
+  margin: 20px auto;
+}
+
+/* ===== TEKS ===== */
+.v12_294 {
+  color: #3d5630;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.v12_293 {
+  color: #475b3f;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.v12_295 {
+  color: #475b3f;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 25px auto;
+}
+
+/* ===== TOMBOL HOME ===== */
+.btn-home {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #5c2e1e;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #814c3b;
+}
