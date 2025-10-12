@@ -1,0 +1,163 @@
+  <!DOCTYPE html>
+  <html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard jual - BriyenAleq</title>
+    <link rel="stylesheet" href="./css/penjualan.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+      table img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      input[type="file"] {
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 6px;
+        background-color: #f8f8f8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">
+          <img src="./images/logoweb.png" alt="Logo BriyenAleq" />
+        </div>
+        <nav class="menu">
+          <a href="penjual.html"><i class="icon">🌿</i>Dashboard</a>
+          <a href="penjualan.html" class="active"><i class="icon">🛒</i>Jual</a>
+          <a href="index.html"><i class="icon">🚪</i>Log Out</a>
+        </nav>
+        <div class="ornament">
+          <img src="./images/topeng.png" alt="Ornamen Dayak" />
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <section class="transaksi-section">
+          <h2>Transaksi</h2>
+          <form id="transaksiForm">
+            <input type="date" id="tanggal" required />
+            <input type="text" id="nama" placeholder="Nama Penjual" required />
+            <input type="text" id="produk" placeholder="Nama Produk" required />
+            <select id="kategori" required>
+              <option value="Ternak">Ternak</option>
+              <option value="Tani">Tani</option>
+            </select>
+            <input type="number" id="harga" placeholder="Harga" required />
+            <input type="file" id="foto" accept="image/*" />
+            <button type="submit">Tambah</button>
+          </form>
+
+          <table id="transaksiTable">
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Nama</th>
+                <th>Produk</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th>Foto</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const form = document.getElementById("transaksiForm");
+      const tableBody = document.querySelector("#transaksiTable tbody");
+      let transaksiList = [];
+      let editIndex = -1;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fotoFile = document.getElementById("foto").files[0];
+        let fotoURL = "";
+
+        if (fotoFile) {
+          fotoURL = URL.createObjectURL(fotoFile);
+        } else if (editIndex !== -1 && transaksiList[editIndex].foto) {
+          fotoURL = transaksiList[editIndex].foto;
+        }
+
+        const data = {
+          tanggal: document.getElementById("tanggal").value,
+          nama: document.getElementById("nama").value,
+          produk: document.getElementById("produk").value,
+          kategori: document.getElementById("kategori").value,
+          harga: document.getElementById("harga").value,
+          foto: fotoURL,
+        };
+
+        if (editIndex === -1) {
+          transaksiList.push(data);
+        } else {
+          transaksiList[editIndex] = data;
+          editIndex = -1;
+          form.querySelector("button").textContent = "Tambah";
+        }
+
+        form.reset();
+        renderTable();
+      });
+
+      function renderTable() {
+        tableBody.innerHTML = "";
+        transaksiList.forEach((t, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${t.tanggal}</td>
+            <td>${t.nama}</td>
+            <td>${t.produk}</td>
+            <td>${t.kategori}</td>
+            <td>${t.harga}</td>
+            <td>${t.foto ? `<img src="${t.foto}" alt="Foto Produk">` : "-"}</td>
+            <td>
+              <button class="detail-btn" onclick="detailData(${index})">Detail</button>
+              <button class="edit-btn" onclick="editData(${index})">Edit</button>
+              <button class="delete-btn" onclick="deleteData(${index})">Hapus</button>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      window.detailData = function (index) {
+        const t = transaksiList[index];
+        alert(
+          `Detail Transaksi:\nTanggal: ${t.tanggal}\nNama: ${t.nama}\nProduk: ${t.produk}\nKategori: ${t.kategori}\nHarga: ${t.harga}`
+        );
+      };
+
+      window.editData = function (index) {
+        const t = transaksiList[index];
+        document.getElementById("tanggal").value = t.tanggal;
+        document.getElementById("nama").value = t.nama;
+        document.getElementById("produk").value = t.produk;
+        document.getElementById("kategori").value = t.kategori;
+        document.getElementById("harga").value = t.harga;
+        editIndex = index;
+        form.querySelector("button").textContent = "Update";
+      };
+
+      window.deleteData = function (index) {
+        if (confirm("Yakin ingin menghapus data ini?")) {
+          transaksiList.splice(index, 1);
+          renderTable();
+        }
+      };
+    </script>
+  </body>
+  </html>
