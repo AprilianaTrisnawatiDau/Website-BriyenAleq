@@ -1,0 +1,15 @@
+body{background-color:#f0fdf4;font-family:"Poppins",sans-serif;color:#065f46;min-height:100vh;margin:0;padding:0}
+.container{width:90%;max-width:900px;margin:40px auto;background:#ffffff;padding:20px;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+h1{text-align:center;color:#065f46;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;margin-bottom:20px}
+th,td{border:1px solid #10b981;padding:8px;text-align:center}
+th{background-color:#10b981;color:#fff}
+td{color:#065f46}
+.hapus,.bayar,.lanjut{display:inline-block;text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600;margin-top:5px;text-align:center}
+.hapus{background-color:#f87171;color:#fff}
+.hapus:hover{background-color:#dc2626}
+.bayar{background-color:#10b981;color:#fff}
+.bayar:hover{background-color:#059669}
+.lanjut{background-color:#22c55e;color:#fff}
+.lanjut:hover{background-color:#16a34a}
+select{padding:6px 10px;border-radius:8px;border:1px solid #10b981;background:#ecfdf5;margin-top:5px}
