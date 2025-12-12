@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penjualan - BriyenAleq</title>
+<link rel="stylesheet" href="css/penjualan.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="images/logoweb.png" alt="Logo BriyenAleq">
+        </div>
+        <nav class="menu">
+            <a href="php/penjual.php">🌿 Dashboard</a>
+            <a class="active">🛒 Jual</a>
+            <a href="index.html">🚪 Log Out</a>
+        </nav>
+        <div class="ornament">
+            <img src="images/topeng.png" alt="Topeng">
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <section class="penjualan-section">
+            <h2>Data Penjualan</h2>
+
+            <!-- FORM -->
+            <form id="penjualanForm" enctype="multipart/form-data">
+                <input type="hidden" id="edit_id">
+
+                <input type="date" id="tanggal" required>
+                <input type="text" id="nama" placeholder="Nama Penjual" required>
+                <input type="text" id="produk" placeholder="Nama Produk" required>
+                <input type="text" id="alamat" placeholder="Alamat" required>
+
+                <select id="kategori" required>
+                    <option value="">Pilih Kategori</option>
+                    <option value="Ternak">Ternak</option>
+                    <option value="Tani">Tani</option>
+                </select>
+
+                <input type="number" id="harga" placeholder="Harga" required>
+                <input type="file" id="foto">
+
+                <button type="submit" id="submitBtn">Tambah Data</button>
+            </form>
+
+            <!-- TABLE -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tanggal</th>
+                        <th>Nama</th>
+                        <th>Produk</th>
+                        <th>Alamat</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
+                        <th>Foto</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="data-penjualan">
+                    <tr><td colspan="8" style="text-align: center;">Memuat data...</td></tr>
+                </tbody>
+            </table>
+
+        </section>
+    </main>
+</div>
+
+<script src="javascript/penjualan.js"></script>
+</body>
+</html>

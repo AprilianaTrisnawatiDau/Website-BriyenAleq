@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Jual - BriyenAleq</title>
+    <link rel="stylesheet" href="./css/penjualan.css" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./images/logoweb.png" alt="Logo BriyenAleq" />
+            </div>
+            <nav class="menu">
+                <a href="penjual.html"><i class="icon">🌿</i>Dashboard</a>
+                <a href="penjualan.html" class="active"><i class="icon">🛒</i>Jual</a>
+                <a href="index.html"><i class="icon">🚪</i>Log Out</a>
+            </nav>
+            <div class="ornament">
+                <img src="./images/topeng.png" alt="Ornamen Dayak" />
+            </div>
+        </aside>
+        <main class="main-content">
+            <section class="transaksi-section">
+                <h2>Penjualan</h2>
+               <form id="penjualanForm">
+    <input type="date" id="tanggal" required />
+    <input type="text" id="nama" placeholder="Nama Penjual" required />
+    <input type="text" id="produk" placeholder="Nama Produk" required />
+    <input type="text" id="alamat" placeholder="Alamat Penjual" required /> <select id="kategori" required>
+        <option value="Ternak">Ternak</option>
+        <option value="Tani">Tani</option>
+    </select>
+    <input type="number" id="harga" placeholder="Harga" required />
+    <input type="file" id="foto" accept="image/*" />
+    <button type="submit">Tambah</button>
+</form>
+
+<table id="penjualanTable">
+    <thead>
+        <tr>
+            <th>Tanggal</th>
+            <th>Nama</th>
+            <th>Produk</th>
+            <th>Alamat</th> <th>Kategori</th>
+            <th>Harga</th>
+            <th>Foto</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+            </section>
+        </main>
+    </div>
+
+    <script src="./javascript/penjualan.js"></script>
+</body>
+</html>

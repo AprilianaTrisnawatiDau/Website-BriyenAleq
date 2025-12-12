@@ -1,0 +1,147 @@
+/* Reset & umum */
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7f9fc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Tombol umum */
+.btn, button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #16a34a;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover, button:hover {
+    background: #15803d;
+}
+
+.btn-disabled {
+    background: #ccc !important;
+    cursor: not-allowed;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Heading */
+h1, h2, h3 {
+    color: #16a34a;
+    margin-bottom: 20px;
+}
+
+/* Grid Produk */
+.produk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+    gap: 25px;
+}
+
+.produk-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    padding: 15px;
+    text-align: center;
+}
+
+.produk-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.produk-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.rating {
+    font-size: 14px;
+    color: #16a34a;
+    margin-bottom: 5px;
+}
+
+.harga {
+    font-size: 16px;
+    font-weight: 600;
+    color: #16a34a;
+    margin-bottom: 5px;
+}
+
+.varian, .alamat {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Tombol grup produk */
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Tabel Keranjang dan Pembayaran */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.total {
+    font-weight: 700;
+    font-size: 18px;
+    text-align: right;
+}
+
+/* Checkout / Bayar */
+.checkout-container {
+    text-align: right;
+}
+
+/* Form select & input */
+select, input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Back link */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #16a34a;
+    font-weight: 600;
+}

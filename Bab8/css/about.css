@@ -1,0 +1,104 @@
+/* ================================== */
+/* FILE: about.css (FINAL TANPA NAVBAR) */
+/* ================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY & FONT ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("../images/bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  overflow-x: hidden;
+  min-height: 100vh;
+  /* padding-top dihapus */
+}
+
+/* ===== AREA UTAMA (v12_290) ===== */
+.v12_290 {
+  width: 100%;
+  min-height: 768px; 
+  background: rgba(219, 240, 206, 0.68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== HEADER KONTEN ===== */
+header {
+  width: 100%;
+  /* Menggunakan warna background transparan agar terlihat latar belakang .v12_290 */
+  background-color: transparent; 
+  text-align: center;
+  padding: 20px 0 12px;
+}
+
+header h1 {
+  color: #3d5630;
+  font-size: 2.2rem; 
+  font-weight: 700;
+}
+
+/* ===== KONTEN UTAMA ===== */
+.content {
+  text-align: center;
+  max-width: 750px;
+  margin-top: 40px; 
+  padding: 40px 25px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== LOGO KONTEN (v12_309) ===== */
+.v12_309 {
+  width: 130px;
+  height: 130px;
+  background: url("../images/logoweb.png") no-repeat center center;
+  background-size: contain;
+  margin: 20px auto;
+  /* Transisi untuk event listener mouseup/mousedown di about.js */
+  transition: transform 0.2s, filter 0.2s; 
+}
+
+/* ===== TEKS ===== */
+.v12_295 {
+  color: #475b3f;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 500;
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  display: block; 
+  /* Transisi untuk event listener mouseover/mouseout di about.js */
+  transition: font-weight 0.2s; 
+}
+
+/* ===== TOMBOL HOME (btn-home) ===== */
+.btn-home {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #5c2e1e;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: #814c3b;
+}
+
+/* Hapus juga semua media query yang spesifik mengatur navbar */
+@media (max-width: 768px) {
+    .content {
+        margin: 20px;
+    }
+}
