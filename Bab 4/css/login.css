@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: url("../images/bg.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* ===== LAPISAN HIJAU MUDA ===== */
+.v12_342 {
+  width: 100%;
+  min-height: 768px; /* ideal untuk layar 14 inch */
+  background: rgba(219, 240, 206, 0.68);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+  background-color: #d8e8c3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 30px;
+  border-bottom: 2px solid #a4b693;
+}
+
+.navbar img {
+  height: 100px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  background-color: #4f7b45;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #6b9961;
+}
+
+/* ===== FORM LOGIN ===== */
+.login-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 350px;
+  width: 90%;
+  margin: 80px auto;
+  padding: 30px 25px;
+  border: 2px solid #4f7b45;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.login-btn,
+.register-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn {
+  background-color: #4f7b45;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.login-btn:hover {
+  background-color: #6b9961;
+}
+
+.register-btn {
+  background-color: #ffffff;
+  color: #4f7b45;
+  border: 2px solid #4f7b45;
+}
+
+.register-btn:hover {
+  background-color: #e7f0e3;
+}
+
+.login-box p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 8px 0;
+}
+/* ================================= */
+/* ===== POPUP BOX STYLE ===== */
+/* ================================= */
+.popup-box {
+  display: none; /* Tersembunyi secara default */
+  position: fixed;
+  z-index: 1000; /* Pastikan di atas semua elemen */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Background gelap transparan */
+}
+
+.popup-box.show {
+  display: block; /* Tampilkan ketika class 'show' ditambahkan */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Tengah vertikal dan horizontal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Lebar responsif */
+  max-width: 350px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content p {
+  font-size: 1.1rem;
+  color: #4f7b45; /* Warna hijau tema */
+  font-weight: 500;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Tambahan: Styling untuk pesan sukses (hijau) dan error (merah) */
+.popup-content.success {
+  border-left: 5px solid #4f7b45; /* Garis hijau */
+}
+.popup-content.error {
+  border-left: 5px solid #dc3545; /* Garis merah */
+}
+/* Tambahkan di akhir file login.css atau di bawah style popup sebelumnya */
+
+.popup-content p {
+  /* Gaya teks popup yang ada */
+  font-size: 1.1rem;
+  color: #4f7b45; /* Warna hijau tema */
+  font-weight: 500;
+  margin-bottom: 15px; /* Tambahkan ruang di bawah pesan */
+}
+
+/* Hapus styling untuk .close-btn (jika ada) */
+
+/* NEW: Style untuk tombol OK */
+.popup-ok-btn {
+  background-color: #4f7b45; /* Warna hijau tema */
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.popup-ok-btn:hover {
+  background-color: #6b9961;
+}
+
+/* Pastikan style .popup-box.show, .popup-content, success, dan error sudah ada dari jawaban sebelumnya. */

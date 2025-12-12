@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ====== LAYOUT DASHBOARD ====== */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(219, 240, 206, 0.68);
+  overflow: hidden;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  width: 260px;
+  background-color: #02542d;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+
+.logo img {
+  width: 120px;
+  display: block;
+  margin: 0 auto 40px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: #14ae5c;
+}
+
+.menu i {
+  font-size: 18px;
+}
+
+/* ====== ORNAMENT (TOPENG) ====== */
+.ornament img {
+  width: 290px;              /* ukuran default foto topeng */
+  max-width: 180px;          /* batas maksimal agar tidak terlalu besar */
+  height: 150px;              /* proporsional */
+  display: block;
+  margin: 10px auto 0;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 10px rgba(20, 174, 92, 0.6));
+  mix-blend-mode: soft-light;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+/* ====== MAIN CONTENT ====== */
+.main-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 60px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* ====== WELCOME SECTION ====== */
+.welcome h1 {
+  color: #02542d;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.welcome .main-logo {
+  width: 290px;
+  margin-top: 20px;
+}
+
+/* ====== RESPONSIVE ADJUSTMENT ====== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+  .main-content {
+    margin-left: 220px;
+    padding: 40px;
+  }
+  .welcome h1 {
+    font-size: 26px;
+  }
+  .welcome .main-logo {
+    width: 170px;
+  }
+  .ornament img {
+    width: 95px; /* sedikit lebih kecil untuk layar laptop */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin: 0;
+    padding: 30px;
+  }
+}
